@@ -1,0 +1,90 @@
+/* Simple Events Pro iCalendar UI */
+
+.se-pro-ical-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    border-left: 4px solid #0073aa;
+}
+
+.se-pro-ical-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #0073aa;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.se-pro-ical-link:hover {
+    background-color: #005a87;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0, 115, 170, 0.3);
+    text-decoration: none;
+}
+
+.se-pro-ical-link::before {
+    content: '📅';
+    font-size: 1.2rem;
+}
+
+.se-pro-ical-link.se-pro-ical-subscribe {
+    background-color: #008000;
+}
+
+.se-pro-ical-link.se-pro-ical-subscribe:hover {
+    background-color: #006000;
+}
+
+.se-pro-ical-link.se-pro-ical-subscribe::before {
+    content: '📆';
+}
+
+/* Standalone button for templates */
+
+.se-pro-ical-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #0073aa;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.se-pro-ical-button:hover {
+    background-color: #005a87;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(0, 115, 170, 0.3);
+}
+
+.se-pro-ical-icon {
+    font-size: 1.1rem;
+}
+
+/* Responsive */
+
+@media (max-width: 600px) {
+    .se-pro-ical-links {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .se-pro-ical-link {
+        width: 100%;
+        justify-content: center;
+    }
+}

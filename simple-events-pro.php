@@ -42,6 +42,25 @@ function simple_events_pro_init() {
     require_once SIMPLE_EVENTS_PRO_DIR . 'includes/class-calendar.php';
     require_once SIMPLE_EVENTS_PRO_DIR . 'includes/class-calendar-shortcode.php';
     new Simple_Events_Pro_Calendar_Shortcode();
+
+    require_once SIMPLE_EVENTS_PRO_DIR . 'includes/class-ical.php';
+    require_once SIMPLE_EVENTS_PRO_DIR . 'includes/class-ical-handler.php';
+    require_once SIMPLE_EVENTS_PRO_DIR . 'includes/class-ical-ui.php';
+    new Simple_Events_Pro_iCal_Handler();
+    new Simple_Events_Pro_iCal_UI();
+
+    add_shortcode('simple_events_subscribe', 'simple_events_pro_subscribe_shortcode');
+}
+
+/**
+ * Render a subscription link shortcode.
+ *
+ * @param array $atts Shortcode attributes.
+ * @return string HTML output.
+ */
+function simple_events_pro_subscribe_shortcode($atts) {
+    $url = Simple_Events_Pro_iCal::get_subscription_url();
+    return '<a href="' . esc_url($url) . '" class="se-pro-ical-link se-pro-ical-subscribe" title="' . esc_attr__('Subscribe to calendar feed', 'simple-events-pro') . '">' . esc_html__('Subscribe to Events', 'simple-events-pro') . '</a>';
 }
 
 /**
