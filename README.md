@@ -10,13 +10,16 @@ Premium features for [Simple Events CPT](https://github.com/jlisojo/simple-event
 
 ## Current features
 
-- Recurrence settings for daily, weekly, and monthly events
-- Automatic next-occurrence calculation in existing event archives and shortcodes
-- Daily WP-Cron synchronization, with stale dates refreshed during public requests
+- **Recurrence settings** for daily, weekly, and monthly events
+- **Automatic next-occurrence calculation** integrated into existing event archives and shortcodes
+- **Occurrence exceptions**: skip a specific recurring date or reschedule it to a different date
+- **Daily WP-Cron synchronization** with stale-date refresh during public requests
+
+Editors add exceptions through a simple metabox interface without affecting the base recurrence rule. Skipped occurrences are automatically passed over; rescheduled occurrences move to their new dates.
 
 ## Development status
 
-This is the initial Pro add-on foundation. Excluding or editing individual occurrences is planned for a later release.
+Excluding or editing individual occurrences beyond exceptions is planned for a later release.
 
 ## License
 
