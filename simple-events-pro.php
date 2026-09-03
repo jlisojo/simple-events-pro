@@ -20,6 +20,7 @@ if (!defined('ABSPATH')) {
 define('SIMPLE_EVENTS_PRO_VERSION', '0.1.0');
 define('SIMPLE_EVENTS_PRO_FILE', __FILE__);
 define('SIMPLE_EVENTS_PRO_DIR', plugin_dir_path(__FILE__));
+define('SIMPLE_EVENTS_PRO_URL', plugin_dir_url(__FILE__));
 
 add_action('plugins_loaded', 'simple_events_pro_init', 20);
 register_activation_hook(__FILE__, 'simple_events_pro_activate');
@@ -41,7 +42,9 @@ function simple_events_pro_init() {
 
     require_once SIMPLE_EVENTS_PRO_DIR . 'includes/class-calendar.php';
     require_once SIMPLE_EVENTS_PRO_DIR . 'includes/class-calendar-shortcode.php';
-    new Simple_Events_Pro_Calendar_Shortcode();
+    require_once SIMPLE_EVENTS_PRO_DIR . 'includes/class-calendar-block.php';
+    $calendar_shortcode = new Simple_Events_Pro_Calendar_Shortcode();
+    new Simple_Events_Pro_Calendar_Block($calendar_shortcode);
 
     require_once SIMPLE_EVENTS_PRO_DIR . 'includes/class-ical.php';
     require_once SIMPLE_EVENTS_PRO_DIR . 'includes/class-ical-handler.php';

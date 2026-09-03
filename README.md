@@ -14,6 +14,7 @@ Premium features for [Simple Events CPT](https://github.com/jlisojo/simple-event
 - **Automatic next-occurrence calculation** integrated into existing event archives and shortcodes
 - **Occurrence exceptions**: skip a specific recurring date or reschedule it to a different date
 - **Calendar view** with month navigation, event cards inline, and responsive design
+- **Gutenberg Event Calendar block** with live preview and sidebar settings
 - **iCalendar export** for individual events and event feeds
 - **Daily WP-Cron synchronization** with stale-date refresh during public requests
 
@@ -30,6 +31,10 @@ Premium features for [Simple Events CPT](https://github.com/jlisojo/simple-event
 | `show_filters` | `true` | Show category filters |
 
 The calendar displays events inline on their dates, with month navigation. Click event titles to view details.
+
+### Gutenberg Event Calendar block
+
+In the WordPress Block Editor, add **Event Calendar** (`simple-events-pro/event-calendar`). Its sidebar settings let editors choose an optional initial month in `YYYY-MM-DD` format and show or hide the category filter. The block previews the dynamic calendar inside the editor and retains the same AJAX month navigation on the published page.
 
 ### iCalendar export
 
