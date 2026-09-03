@@ -22,6 +22,8 @@ define('SIMPLE_EVENTS_PRO_FILE', __FILE__);
 define('SIMPLE_EVENTS_PRO_DIR', plugin_dir_path(__FILE__));
 
 add_action('plugins_loaded', 'simple_events_pro_init', 20);
+register_activation_hook(__FILE__, 'simple_events_pro_activate');
+register_deactivation_hook(__FILE__, 'simple_events_pro_deactivate');
 
 /**
  * Bootstrap Pro features after the free plugin has loaded.
@@ -36,6 +38,25 @@ function simple_events_pro_init() {
 
     require_once SIMPLE_EVENTS_PRO_DIR . 'includes/class-recurrence.php';
     new Simple_Events_Pro_Recurrence();
+}
+
+/**
+ * Schedule a daily refresh of recurring-event dates.
+ */
+function simple_events_pro_activate() {
+    if (!wp_next_scheduled('simple_events_pro_refresh_occurrences')) {
+        wp_schedule_event(time(), 'daily', 'simple_events_pro_refresh_occurrences');
+    }
+}
+
+/**
+ * Remove the scheduled refresh when Pro is deactivated.
+ */
+function simple_events_pro_deactivate() {
+    $timestamp = wp_next_scheduled('simple_events_pro_refresh_occurrences');
+    if ($timestamp) {
+        wp_unschedule_event($timestamp, 'simple_events_pro_refresh_occurrences');
+    }
 }
 
 /**
