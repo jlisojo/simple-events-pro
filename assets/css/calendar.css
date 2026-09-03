@@ -1,0 +1,243 @@
+/* Simple Events Pro Calendar */
+
+.se-pro-calendar-wrapper {
+    margin: 2rem 0;
+}
+
+.se-pro-calendar-filters {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+}
+
+.se-pro-calendar-filters label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+}
+
+.se-pro-calendar-filters select {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+.se-pro-calendar {
+    width: 100%;
+    max-width: 100%;
+}
+
+.se-pro-calendar__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+}
+
+.se-pro-calendar__title {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    flex: 1;
+    text-align: center;
+}
+
+.se-pro-calendar__prev,
+.se-pro-calendar__next {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    color: #333;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.se-pro-calendar__prev:hover,
+.se-pro-calendar__next:hover {
+    background-color: #e0e0e0;
+    border-color: #999;
+}
+
+.se-pro-calendar__table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.se-pro-calendar__table thead {
+    background-color: #f5f5f5;
+    border-bottom: 2px solid #ddd;
+}
+
+.se-pro-calendar__table thead th {
+    padding: 1rem 0.5rem;
+    text-align: center;
+    font-weight: 600;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+.se-pro-calendar__day {
+    width: 14.28%;
+    vertical-align: top;
+    border: 1px solid #eee;
+    padding: 0.5rem;
+    height: 120px;
+    background-color: #fafafa;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.se-pro-calendar__day:hover {
+    background-color: #f0f7ff;
+}
+
+.se-pro-calendar__day--today {
+    background-color: #fffef0;
+    border: 2px solid #ffc107;
+}
+
+.se-pro-calendar__day--today .se-pro-calendar__day-number {
+    font-weight: bold;
+    color: #ffc107;
+}
+
+.se-pro-calendar__day--empty {
+    background-color: #f0f0f0;
+    cursor: default;
+}
+
+.se-pro-calendar__day--empty:hover {
+    background-color: #f0f0f0;
+}
+
+.se-pro-calendar__day--has-events {
+    background-color: #f0f7ff;
+}
+
+.se-pro-calendar__day-number {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.25rem;
+    font-size: 1.1rem;
+}
+
+.se-pro-calendar__events {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+}
+
+.se-pro-calendar__event {
+    display: block;
+    padding: 0.25rem 0.5rem;
+    background-color: #0073aa;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 3px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transition: background-color 0.2s ease;
+}
+
+.se-pro-calendar__event:hover {
+    background-color: #005a87;
+    text-decoration: none;
+}
+
+.se-pro-calendar__event-title {
+    font-size: inherit;
+}
+
+/* Responsive design for smaller screens */
+
+@media (max-width: 768px) {
+    .se-pro-calendar__table {
+        font-size: 0.9rem;
+    }
+
+    .se-pro-calendar__day {
+        height: 100px;
+        padding: 0.25rem;
+    }
+
+    .se-pro-calendar__day-number {
+        font-size: 0.9rem;
+    }
+
+    .se-pro-calendar__events {
+        font-size: 0.65rem;
+    }
+
+    .se-pro-calendar__event {
+        padding: 0.2rem 0.3rem;
+    }
+
+    .se-pro-calendar__prev,
+    .se-pro-calendar__next {
+        width: 2rem;
+        height: 2rem;
+        font-size: 1rem;
+    }
+
+    .se-pro-calendar__title {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .se-pro-calendar__table thead th {
+        padding: 0.5rem 0.25rem;
+        font-size: 0.75rem;
+    }
+
+    .se-pro-calendar__day {
+        height: 80px;
+        padding: 0.2rem;
+    }
+
+    .se-pro-calendar__day-number {
+        font-size: 0.8rem;
+    }
+
+    .se-pro-calendar__events {
+        font-size: 0.6rem;
+    }
+
+    .se-pro-calendar__event {
+        padding: 0.15rem 0.2rem;
+        font-size: 0.6rem;
+    }
+
+    .se-pro-calendar-filters {
+        flex-direction: column;
+    }
+
+    .se-pro-calendar-filters label {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .se-pro-calendar-filters select {
+        width: 100%;
+    }
+}

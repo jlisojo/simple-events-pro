@@ -38,6 +38,10 @@ function simple_events_pro_init() {
 
     require_once SIMPLE_EVENTS_PRO_DIR . 'includes/class-recurrence.php';
     new Simple_Events_Pro_Recurrence();
+
+    require_once SIMPLE_EVENTS_PRO_DIR . 'includes/class-calendar.php';
+    require_once SIMPLE_EVENTS_PRO_DIR . 'includes/class-calendar-shortcode.php';
+    new Simple_Events_Pro_Calendar_Shortcode();
 }
 
 /**
